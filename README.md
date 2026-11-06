@@ -1,3 +1,5 @@
+# LM555
+
 ![LM555_sch](LM555-sch.jpg)
 
 This schematic design is an adjustable LED flasher circuit configured as an astable multivibrator using the classic 555 timer IC. It automatically generates a continuous stream of square-wave pulses, causing the green LED to blink repeatedly at a speed (frequency) that can manually be tuned.
