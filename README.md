@@ -10,16 +10,23 @@ Core Integrated Circuit
 
     • U1 (LM555xN): The main 555 timer IC. It acts as an electronic oscillator that continuously switches its output pin between HIGH (+5V) and LOW (0V) states.
     
-Pin  Pin Name                           	What it Stands For	What it is Used For
-__________________________________________________________________________________
-1	   GND	Ground	                      The reference point (0V). It connects to the negative terminal of your power supply to complete the circuit loop.
-2    TRIG	Trigger                      	The "Turn On" switch. When the voltage on this pin drops below 1/3 of the supply voltage, it forces the chip's output (Pin 3) to flip HIGH.
-3 	 OUT	Output	                      The power driver. This is where the chip delivers its signal. It can push or pull up to 200mA of current to drive components like LEDs, buzzers, or relays.
-4	   RESET	Reset                     	The system override. Applying a LOW voltage (0V) here instantly forces the output (Pin 3) to turn off. In regular use, it is tied to +VCC so the chip doesn't accidentally reset itself.
-5 	 CONT	Control Voltage             	The threshold tuner. It allows external access to the internal voltage divider. Usually, a small capacitor is attached here to isolate it from electrical noise and keep the timing steady.
-6	   THRES	Threshold	                  The "Turn Off" switch. When the voltage on this pin rises above 2/3 of the supply voltage, it forces the output (Pin 3) to flip LOW, ending the pulse cycle.
-7	   DISCH	Discharge	                  The capacitor drain. This pin is internally connected to an open transistor switch. When the output goes LOW, this pin connects directly to GND, creating a path to empty the timing capacitor.
-8	   VCC Voltage Common Collector	      The main power input. This is where you connect the positive voltage from your power supply (typically anywhere from +4.5V up to +16V for standard models).
+    Pin  Pin Name                           	What it Stands For	What it is Used For
+    __________________________________________________________________________________
+    1	   GND	Ground	                      The reference point (0V). It connects to the negative terminal of your power supply to complete the circuit loop.
+    
+    2      TRIG	Trigger                       The "Turn On" switch. When the voltage on this pin drops below 1/3 of the supply voltage, it forces the chip's output (Pin 3) to flip HIGH.
+    
+    3 	 OUT	Output	                      The power driver. This is where the chip delivers its signal. It can push or pull up to 200mA of current to drive components like LEDs, buzzers, or relays.
+    
+    4	   RESET	Reset                     The system override. Applying a LOW voltage (0V) here instantly forces the output (Pin 3) to turn off. In regular use, it is tied to +VCC so the chip doesn't accidentally reset itself.
+    
+    5 	 CONT	Control Voltage               The threshold tuner. It allows external access to the internal voltage divider. Usually, a small capacitor is attached here to isolate it from electrical noise and keep the timing steady.
+    
+    6	   THRES	Threshold	              The "Turn Off" switch. When the voltage on this pin rises above 2/3 of the supply voltage, it forces the output (Pin 3) to flip LOW, ending the pulse cycle.
+    
+    7	   DISCH	Discharge	              The capacitor drain. This pin is internally connected to an open transistor switch. When the output goes LOW, this pin connects directly to GND, creating a path to empty the timing capacitor.
+    
+    8	   VCC Voltage Common Collector	      The main power input. This is where you connect the positive voltage from your power supply (typically anywhere from +4.5V up to +16V for standard models).
 
     • Pins 2 and 6 are tied together: This forces the chip to continuously watch its own timing capacitor. As the capacitor charges up past the Threshold (Pin 6) limit, the chip shuts off the output. As the capacitor drains down past the Trigger (Pin 2) limit, the chip turns the output back on.
     • Pin 7 manages the timing speed: It opens and closes the drainage path, causing the capacitor to cycle up and down based on the resistance of your potentiometer.
