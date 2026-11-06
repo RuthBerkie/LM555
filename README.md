@@ -16,11 +16,11 @@ Core Integrated Circuit
     
     2      TRIG	Trigger                       The "Turn On" switch. When the voltage on this pin drops below 1/3 of the supply voltage, it forces the chip's output (Pin 3) to flip HIGH.
     
-    3 	 OUT	Output	                      The power driver. This is where the chip delivers its signal. It can push or pull up to 200mA of current to drive components like LEDs, buzzers, or relays.
+    3 	   OUT	Output	                      The power driver. This is where the chip delivers its signal. It can push or pull up to 200mA of current to drive components like LEDs, buzzers, or relays.
     
     4	   RESET	Reset                     The system override. Applying a LOW voltage (0V) here instantly forces the output (Pin 3) to turn off. In regular use, it is tied to +VCC so the chip doesn't accidentally reset itself.
     
-    5 	 CONT	Control Voltage               The threshold tuner. It allows external access to the internal voltage divider. Usually, a small capacitor is attached here to isolate it from electrical noise and keep the timing steady.
+    5 	   CONT	Control Voltage               The threshold tuner. It allows external access to the internal voltage divider. Usually, a small capacitor is attached here to isolate it from electrical noise and keep the timing steady.
     
     6	   THRES	Threshold	              The "Turn Off" switch. When the voltage on this pin rises above 2/3 of the supply voltage, it forces the output (Pin 3) to flip LOW, ending the pulse cycle.
     
